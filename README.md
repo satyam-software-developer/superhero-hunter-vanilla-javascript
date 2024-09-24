@@ -2,8 +2,8 @@
 
 Superhero Hunter using vanilla JavaScript project for frontend web development.
 
-1. Git repository link: https://github.com/satyam-software-developer/stopwatch-vanilla-javascript.git
-2. Hosted link: https://satyam-software-developer.github.io/stopwatch-vanilla-javascript/
+1. Git repository link:https://github.com/satyam-software-developer/superhero-hunter-vanilla-javascript.git
+2. Hosted link: https://satyam-software-developer.github.io/superhero-hunter-vanilla-javascript/
 
 ## Overview
 
@@ -93,7 +93,7 @@ The "My Favorite Superheroes" list is stored in the browser’s localStorage, en
 - Clone the repository to your local machine
 
 ```bash
-  git clone https://github.com/satyam-software-developer/stopwatch-vanilla-javascript.git
+  git clone https://github.com/satyam-software-developer/superhero-hunter-vanilla-javascript.git
 ```
 
 - Obtain an API key from Marvel Developer Portal (https://developer.marvel.com/) and add it to the appropriate location in the code
@@ -117,7 +117,7 @@ This project is licensed under the MIT License.
 
 ## DEMO
 
-- https://satyam-software-developer.github.io/stopwatch-vanilla-javascript/
+- https://satyam-software-developer.github.io/superhero-hunter-vanilla-javascript/
 
 ## Author
 
