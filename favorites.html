@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en" id="root" color-scheme="light">
+    <!-- 
+    The document is declared as an HTML5 document using the `<!DOCTYPE html>` declaration.
+    The `<html>` tag defines the root of the HTML document, with `lang="en"` specifying the language as English.
+    The `id="root"` gives a unique identifier to the `html` element, and `color-scheme="light"` sets the initial color scheme to light mode.
+    -->
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- Sets the character encoding to UTF-8, ensuring that the document can support various characters and symbols. -->
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Ensures compatibility with older versions of Internet Explorer by setting the document mode to the latest rendering engine available. -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Optimizes the layout for mobile devices by setting the width of the page to the width of the device, and setting the initial zoom level to 1. -->
+
+        <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
+        <!-- Links a favicon (small icon) that appears in the browser tab. The path points to an image file stored in the 'images' directory. -->
+
+        <title>Superhero Hunter</title>
+        <!-- The title that will be displayed in the browser's title bar and on the tab. -->
+
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,600;0,900;1,100;1,200;1,300;1,800&display=swap"
+            rel="stylesheet">
+        <!-- Preconnect to Google Fonts and load the "Kanit" font with various weights and styles. This font will be used for styling the text in the page. -->
+
+        <!-- FontAwesome -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Links to FontAwesome, a popular icon library. It is used to insert icons in the UI, such as the moon icon for theme toggle and heart icon for favorites. -->
+
+        <!-- Custom Stylesheets -->
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/favorites.css">
+        <!-- Links to external custom CSS files that contain styling rules for the webpage. These stylesheets are stored in the 'css' directory. -->
+    </head>
+
+    <body>
+
+        <!-- Navbar -->
+        <nav class="flex-row navbar">
+            <!--
+            Defines the navigation bar. The `flex-row` class makes the navbar items align in a horizontal row, while the `navbar` class provides the overall styling for the navbar, such as background color and text alignment.
+            -->
+
+            <!-- Site Icon and Name -->
+            <div class="flex-row navbar-brand">
+                <!-- 
+                This container holds the logo and the site name.
+                The `flex-row` class aligns its content (logo and text) in a row.
+                -->
+
+                <img class="logo" src="./images/mask.gif2.png" alt>
+                <!-- The logo image is displayed here, and its styling is handled by the 'logo' class. The path points to the logo image stored in the 'images' directory. -->
+
+                <a href="./index.html">
+                    <span>Superhero Hunter</span>
+                </a>
+                <!-- The site name "Superhero Hunter" is wrapped inside an anchor (<a>) tag, making it clickable and linking to the 'index.html' page, which is likely the homepage. -->
+            </div>
+
+            <!-- Theme Button and Favorites Button -->
+            <div class="flex-row favAndTheme-btn">
+                <!-- 
+                This container holds the theme toggle button and the favorites/home button.
+                The `flex-row` class makes the buttons align in a horizontal row, while `favAndTheme-btn` adds custom styling like spacing.
+                -->
+
+                <!-- Theme Toggle Button -->
+                <button id="theme-btn" class="btn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- This button is used to toggle between light and dark themes. It contains an icon from FontAwesome representing the moon, indicating dark mode. -->
+
+                <!-- Home Button -->
+                <a class="flex-row link-to-different-page" href="./index.html">
+                    <button class="btn fav-btn">
+                        <i class="fa-solid fa-house"></i> &nbsp; Home
+                    </button>
+                </a>
+                <!-- The home button contains a house icon from FontAwesome and text saying "Home". Clicking it redirects to 'index.html'. -->
+            </div>
+        </nav>
+
+        <div class="favourite-characters">
+            <!--
+            This div is a container for displaying favorite superhero characters. The content inside will be dynamically generated using JavaScript.
+            -->
+
+            <div class="flex-row cards-container" id="container">
+                <!-- 
+                This is the container where the favorite character cards will be displayed. The `cards-container` class adds styles such as layout and spacing, while `id="container"` allows JavaScript to easily target this element for DOM manipulation.
+                -->
+
+                <!-- The structure of the character card is outlined below, but it will be added dynamically using JavaScript -->
+                <!--
+                <div class="flex-col card">
+                    <img src="${character.squareImage}" alt="">
+                    <span class="name">${character.name}</span>
+                    <span class="id">Id : ${character.id}</span>
+                    <span class="comics">Comics : ${character.comics}</span>
+                    <span class="series">Series : ${character.series}</span>
+                    <span class="stories">Stories : ${character.stories}</span>
+                    <a class="character-info" href="./more-info.html">
+                         <button class="btn"><i class="fa-solid fa-circle-info"></i> &nbsp; More Info</button>
+                    </a>
+                    <div style="display:none;">
+                         <span>${character.id}</span>
+                         <span>${character.name}</span>
+                         <span>${character.comics}</span>
+                         <span>${character.series}</span>
+                         <span>${character.stories}</span>
+                         <span>${character.description}</span>
+                         <span>${character.landscapeImage}</span>
+                         <span>${character.portraitImage}</span>
+                         <span>${character.squareImage}</span>
+                    </div>
+                    <button class="btn remove-btn"><i class="fa-solid fa-heart-circle-minus"></i> &nbsp; Remove from Favourites</button>
+               </div>
+                -->
+                <!--
+                The above block shows an example of how character cards are structured. Each card displays character details like name, id, comics, and images. It also includes buttons for more information and to remove the character from favorites.
+                -->
+            </div>
+        </div>
+
+        <!-- Toast Notification for Removal from Favorites -->
+        <span data-visiblity="hide" class="remove-toast">Removed from
+            Favourites</span>
+        <!--
+        This `span` element is used to show a toast notification when a character is removed from favorites. The `data-visiblity` attribute controls whether the notification is shown or hidden. The styling for this is managed in the CSS file.
+        -->
+
+        <!-- Background image -->
+        <img class="bg-img" src="./images/background-light-img3.png" alt>
+        <!-- 
+        A background image for the webpage. The 'bg-img' class applies custom styles to this image, such as size and position, and the image file is located in the 'images' directory.
+        -->
+
+        <!-- JavaScript for Favorites -->
+        <script src="./js/favorites.js"></script>
+        <!-- 
+        This script file contains the JavaScript logic that handles the functionality of the favorites page, such as adding/removing characters, updating the DOM, and showing notifications. It is stored in the 'js' directory.
+        -->
+
+    </body>
+
+</html>

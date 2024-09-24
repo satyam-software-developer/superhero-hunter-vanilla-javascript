@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en" id="root" color-scheme="light">
+    <!-- 
+    Declares the document as HTML5 with `<!DOCTYPE html>`. 
+    The `<html>` tag defines the root of the document, with language set to English (`lang="en"`).
+    The `id="root"` is used for targeting the root element, and `color-scheme="light"` sets the page's default color theme to light.
+    -->
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- 
+        Sets the character encoding of the webpage to UTF-8, allowing the page to display a wide range of characters and symbols correctly.
+        -->
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- 
+        Ensures compatibility with Internet Explorer and tells the browser to use the latest rendering engine available.
+        -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 
+        Configures the viewport for responsive design, making sure the page scales correctly on different devices.
+        -->
+
+        <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
+        <!-- 
+        Links the favicon (small icon displayed on the browser tab) from the 'images' directory.
+        -->
+
+        <title id="page-title">Superhero Hunter</title>
+        <!-- 
+        The `<title>` tag sets the title of the webpage displayed on the browser tab. The `id="page-title"` allows dynamic updates via JavaScript.
+        -->
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,600;0,900;1,100;1,200;1,300;1,800&display=swap"
+            rel="stylesheet">
+        <!-- 
+        Preconnects to Google's font services and loads the 'Kanit' font family in various weights (200, 300, 600, etc.). The `display=swap` ensures the text is visible while the font is loading.
+        -->
+
+        <!-- FontAwesome -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- 
+        Links to FontAwesome (an icon library) to provide icons like the heart and moon used in the page. The `integrity` attribute ensures the resource hasn't been tampered with, and `crossorigin="anonymous"` allows loading from a third-party.
+        -->
+
+        <!-- Custom Stylesheet -->
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/more-info.css">
+        <!-- 
+        Links to the custom CSS files `styles.css` and `more-info.css` for page styling. The files are located in the 'css' directory.
+        -->
+    </head>
+
+    <body>
+
+        <!-- Navbar -->
+        <nav class="flex-row navbar">
+            <!-- 
+            Defines the navigation bar. The `flex-row` class makes sure elements inside are arranged horizontally. The `navbar` class provides the overall styling.
+            -->
+
+            <!-- Site Icon and Name -->
+            <div class="flex-row navbar-brand">
+                <!-- 
+                This `div` contains the site icon (logo) and site name, both aligned in a row using `flex-row`.
+                -->
+
+                <img class="logo" src="./images/mask.gif2.png" alt>
+                <!-- 
+                The site logo (image) is loaded from the 'images' directory. The `alt` attribute is left empty, but it should ideally contain descriptive text for accessibility.
+                -->
+
+                <a href="./index.html">
+                    <span>Superhero Hunter</span>
+                </a>
+                <!-- 
+                A clickable link redirects users to the homepage (`index.html`). "Superhero Hunter" is the clickable text styled with a `span` element.
+                -->
+            </div>
+
+            <!-- Theme Button and Favourites Button -->
+            <div class="flex-row favAndTheme-btn">
+                <!-- 
+                This container holds the theme toggle button and the favorites button, arranged horizontally using `flex-row`.
+                -->
+
+                <button id="theme-btn" class="btn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- 
+                A button to toggle between light and dark themes. The FontAwesome moon icon represents dark mode.
+                -->
+
+                <a class="flex-row link-to-different-page"
+                    href="./favorites.html">
+                    <button class="btn fav-btn">
+                        <i class="fa-solid fa-heart fav-icon"></i> &nbsp;
+                        Favourites
+                    </button>
+                </a>
+                <!-- 
+                A button linking to the favorites page (`favorites.html`). It includes a heart icon and the label "Favourites."
+                -->
+
+                <a class="flex-row link-to-different-page" href="./index.html">
+                    <button class="btn fav-btn">
+                        <i class="fa-solid fa-house"></i> &nbsp; Home
+                    </button>
+                </a>
+                <!-- 
+                A button that links back to the homepage (`index.html`). The button contains a house icon and the label "Home."
+                -->
+            </div>
+        </nav>
+
+        <!-- Info Container -->
+        <div class="flex-row info">
+            <section class="flex-col" id="info-container">
+                <!-- 
+                A section to display detailed superhero information, arranged vertically using `flex-col`. The `id="info-container"` will be targeted for dynamically adding content using JavaScript.
+                -->
+
+                <!-- 
+                The commented-out block below represents the structure of the superhero information that will be dynamically populated into the page using DOM manipulation. The information includes the superhero's name, image, ID, comics, series, and more.
+                -->
+
+                <!--
+                <div class="flex-row hero-name">${heroInfo.name}</div>
+                <div class="flex-row hero-img-and-more-info">
+                    <img id="portraitImage" class="hero-img" src="${heroInfo.portraitImage}" alt="">
+                    <img style="display:none;" id="landscapeImage" src="${heroInfo.landscapeImage}" alt="">
+                    <div class="flex-col more-info">
+                         <div class="flex-row id">
+                              <b>ID:</b><span>${heroInfo.id}</span>
+                         </div>
+                         <div class="flex-row comics">
+                              <b>Comics:</b><span>${heroInfo.comics}</span>
+                         </div>
+                         <div class="flex-row series">
+                              <b>Series:</b><span>${heroInfo.series}</span>
+                         </div>
+                         <div class="flex-row stories">
+                              <b>Stories:</b><span>${heroInfo.stories}</span>
+                         </div>
+                    </div>
+               </div>
+               <div class="flex-col hero-discription">
+                    <b>Discription:</b>
+                    <p>${heroInfo.description != "" ? heroInfo.description : "No Description Available"}</p>
+               </div>
+               <div style="display:none;">
+                    <span>${heroInfo.name}</span>
+                    <span>${heroInfo.portraitImage}</span>
+                    <span>${heroInfo.landscapeImage}</span>
+                    <span>${heroInfo.id}</span>
+                    <span>${heroInfo.comics}</span>
+                    <span>${heroInfo.series}</span>
+                    <span>${heroInfo.stories}</span>
+                    <span>${heroInfo.squareImage}</span>
+                    <span>${heroInfo.description}</span>
+               </div>
+               <button class="btn add-to-fav-btn">${favouritesCharacterIDs.has(`${heroInfo.id}`) ? "<i class=\"fa-solid fa-heart-circle-minus\"></i> &nbsp; Remove from Favourites" :"<i class=\"fa-solid fa-heart fav-icon\"></i> &nbsp; Add to Favourites</button>"}
+               -->
+            </section>
+        </div>
+
+        <!-- Toasts for notifying user that character is added or removed from favourites -->
+        <span data-visiblity="hide" class="fav-toast">Added to Favourites</span>
+        <span data-visiblity="hide" class="remove-toast">Removed from
+            Favourites</span>
+        <!-- 
+        These `span` elements are hidden by default and will display toast notifications when a superhero is added to or removed from the user's favorites. The notifications are styled with `fav-toast` and `remove-toast`.
+        -->
+
+        <!-- Background Image -->
+        <img class="bg-img" src="./images/background-light-img3.png" alt>
+        <!-- 
+        Displays a background image, styled with the class `bg-img`. The image file is located in the 'images' directory.
+        -->
+
+        <!-- External Script file -->
+        <script defer src="./js/more-info.js"></script>
+        <!-- 
+        Links the external JavaScript file `more-info.js` that handles dynamic content like loading superhero information. The `defer` attribute ensures the script runs after the HTML is parsed.
+        -->
+    </body>
+
+</html>

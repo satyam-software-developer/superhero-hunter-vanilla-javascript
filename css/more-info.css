@@ -1,0 +1,159 @@
+/* Sets the width and height of the body to take up the full viewport width and height (100vw for width and 100vh for height). */
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 
+Styles the container with the class 'info'. 
+- Centers its content horizontally and vertically using 'justify-content' and 'align-items'.
+- Takes up 88% of the viewport height (remaining 12% is likely for other elements like headers or footers).
+*/
+.info {
+  justify-content: center;
+  align-items: center;
+  height: 88%;
+}
+
+/* 
+Styles the element with the ID 'info-container', which likely contains the main information about the hero.
+- Gives it a translucent background color with rgba.
+- Sets the width to 60% of the viewport, allowing for a centered appearance.
+- The height is set to 'auto', allowing it to adjust based on its content.
+- Adds a gap of 15px between child elements and 15px padding on top/bottom and 50px on the sides.
+- Adds a blur effect to the background using 'backdrop-filter'.
+- The border-radius of 10px makes the corners rounded for a smooth appearance.
+*/
+#info-container {
+  background-color: rgba(134, 192, 211, 0.95);
+  width: 60%;
+  height: auto;
+  gap: 15px;
+  padding: 15px 50px;
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+}
+
+/* 
+Centers the hero's name inside the container by using 'justify-content: center'. 
+This likely affects a flexbox container.
+*/
+.hero-name {
+  justify-content: center;
+}
+
+/* 
+Adds a gap of 30px between the hero image and the additional information about the hero.
+This helps to space out the layout horizontally.
+*/
+.hero-img-and-more-info {
+  gap: 30px;
+}
+
+/* 
+Styles the hero image inside the hero information section.
+- Sets the width to 20% of its container (responsive to container size).
+- Sets the height to 'auto', allowing the image to scale proportionally.
+- Ensures the minimum width of the image is 120px so it doesn't get too small.
+*/
+.hero-img {
+  width: 20%;
+  height: auto;
+  min-width: 120px;
+}
+
+/* 
+Styles the additional information about the hero.
+- Adds a gap of 15px between the individual pieces of information.
+- Sets the font size to 1.3rem, making the text slightly larger than default.
+*/
+.more-info {
+  gap: 15px;
+  font-size: 1.3rem;
+}
+
+/* 
+These classes ('id', 'comics', 'series', 'stories') are used for different pieces of hero information.
+- Adds a small gap of 5px between child elements within these sections.
+*/
+.id,
+.comics,
+.series,
+.stories {
+  gap: 5px;
+}
+
+/* 
+Styles the hero description text.
+- Sets the font size to 1.1rem for better readability.
+*/
+.hero-discription {
+  font-size: 1.1rem;
+}
+
+/* 
+Specifically targets the 'b' (bold) elements inside the hero description.
+- Increases the font size to 1.3rem to emphasize bold text, making it stand out.
+*/
+.hero-discription b {
+  font-size: 1.3rem;
+}
+
+/* 
+Styles the background image.
+- Sets the z-index to -1 to push the image behind other elements on the page.
+*/
+.bg-img {
+  z-index: -1;
+}
+
+/* 
+Media query to handle responsiveness for screens smaller than or equal to 678px width (typically mobile devices).
+This section makes the layout adapt to smaller screens.
+*/
+@media screen and (max-width: 678px) {
+  /* 
+  Changes the layout of the hero image and more info container.
+  - Flex direction becomes 'column' so the image and info are stacked vertically.
+  - Centers the elements horizontally using 'align-items: center'.
+  */
+  .hero-img-and-more-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 
+  Centers the hero description text for smaller screens.
+  */
+  .hero-discription {
+    text-align: center;
+  }
+
+  /* 
+  In smaller screens, the info container takes up 85% of the viewport width to maintain a good layout on mobile.
+  */
+  #info-container {
+    width: 85%;
+  }
+
+  /* 
+  Sets the landscape image to take the full width of its container on smaller screens.
+  */
+  #landscapeImage {
+    width: 100%;
+  }
+
+  /* 
+  Ensures the height of the 'info' container takes up the entire viewport on smaller screens.
+  */
+  .info {
+    height: 100vh;
+  }
+
+  /* 
+  Reduces the gap between elements in the 'more-info' section to 0px for compact display on small screens.
+  */
+  .more-info {
+    gap: 0px;
+  }
+}

@@ -1,0 +1,449 @@
+/* 
+Resetting the default margin and padding for all elements.
+Setting box-sizing to border-box ensures that padding and borders are included within the element’s width and height.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+Declaring custom CSS variables (for light and dark mode color schemes) using the :root selector. 
+These variables will be reused throughout the styles for easier theme management.
+*/
+
+/* Light Mode Colors */
+:root {
+  --background-light-color: #fff;
+  --navbar-light-background-color: #252221f5;
+  --navbar-light-color: #d9330aec;
+  --searchBar-light-box-shadow: #bb42d9;
+  --text-light-color: #000;
+
+  /* Dark Mode Colors */
+  --background-dark-color: #000;
+  --navbar-dark-background-color: #330065;
+  --navbar-dark-color: #aa40b0;
+  --searchBar-dark-box-shadow: #972d80;
+  --text-dark-color: #fff;
+}
+
+/* 
+Applies the dark color scheme by updating the variables.
+This style is applied when the custom attribute `color-scheme="dark"` is present on the element.
+*/
+[color-scheme="dark"] {
+  --background-color: var(--background-dark-color);
+  --navbar-background-color: var(--navbar-dark-background-color);
+  --navbar-color: var(--navbar-dark-color);
+  --searchBar-box-shadow: var(--searchBar-dark-box-shadow);
+  --text-color: var(--text-dark-color);
+}
+
+/* 
+Applies the light color scheme by updating the variables.
+This style is applied when the custom attribute `color-scheme="light"` is present on the element.
+*/
+[color-scheme="light"] {
+  --background-color: var(--background-light-color);
+  --navbar-background-color: var(--navbar-light-background-color);
+  --navbar-color: var(--navbar-light-color);
+  --searchBar-box-shadow: var(--searchBar-light-box-shadow);
+  --text-color: var(var(--text-light-color));
+}
+
+/* 
+Applies the background color based on the selected color scheme.
+Sets font family, aligns the content to the center, and makes the body span the entire viewport.
+*/
+body {
+  background-color: var(--background-color);
+  font-family: "Kanit", sans-serif;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* 
+Reusable utility class to create a horizontal flex container.
+*/
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* 
+Reusable utility class to create a vertical flex container.
+*/
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------- Navbar Styles --------------------------------------------- */
+
+/* 
+Styles the main navbar container.
+- Makes the navbar stretch to 100% width.
+- Uses flexbox to space the content evenly.
+- Sets the background color and other text-related styles based on the theme.
+*/
+.navbar {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--navbar-background-color);
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 30px;
+  padding: 0 20px;
+}
+
+/* 
+Styles the left side of the navbar, typically containing the brand/logo.
+Centers its content horizontally and adds a gap of 10px between items.
+*/
+.navbar-brand {
+  align-items: center;
+  gap: 10px;
+}
+
+/* 
+Styles anchor tags in the navbar.
+Ensures the text decoration is removed and the color is set based on the current theme.
+*/
+.navbar-brand a {
+  text-decoration: none;
+  color: var(--navbar-color);
+}
+
+/* 
+Styles the logo on the right side of the navbar.
+Sets the width to 3% of the container and ensures a minimum width of 45px.
+*/
+.logo {
+  width: 3%;
+  min-width: 45px;
+}
+
+/* 
+Styles the buttons for 'Favorites' and theme toggle on the right side of the navbar.
+Centers the items in the container and adds a gap of 10px between them.
+*/
+.favAndTheme-btn {
+  align-items: center;
+  gap: 10px;
+}
+
+/* 
+Styles anchor links that lead to different pages.
+Centers the text and removes the default text-decoration.
+*/
+.link-to-different-page {
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* 
+Reusable button styles for all buttons.
+Sets no border, custom padding, background color, and other properties like height, color, and font-size.
+*/
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: var(--navbar-color);
+  border-radius: 3px;
+  color: black;
+  height: 40px;
+  font-size: 16px;
+}
+
+/* 
+Styles the theme toggle button specifically.
+Sets the width of the button and the size of the icon inside.
+*/
+#theme-btn {
+  width: 40px;
+}
+
+#theme-btn i {
+  font-size: 20px;
+}
+
+/* 
+Styles the 'Favorites' button specifically.
+Sets a fixed width of 140px and larger font size for the button.
+*/
+.fav-btn {
+  font-size: 16px;
+  width: 140px;
+  color: black;
+}
+
+/* 
+Styles the favorite icon inside the button.
+Sets its color to black.
+*/
+.fav-icon {
+  color: black;
+}
+
+/* 
+Styles the background image on the right side of the page.
+Fixes its position and makes it 90% of the viewport height, with a slight blur applied.
+*/
+.bg-right-side-img {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 90%;
+  filter: blur(2px);
+}
+
+/* ----------------------- Search Bar and Results Section ----------------------------- */
+
+/* 
+Styles the search bar container.
+Centers its contents and sets its height to 50px.
+*/
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+/* 
+Styles the search icon container (left part of the search bar).
+- Sets its background and shadow based on the theme.
+- Centers the icon inside with flexbox and gives it a height and width of 50px.
+- Adds some margin at the top and rounds the left side of the container.
+*/
+.search-icon-container {
+  background: var(--navbar-background-color);
+  box-shadow: 0px 0px 7px 0px var(--searchBar-box-shadow);
+  color: #b7b1a8;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-top: 50px;
+  border-radius: 10px 0 0 10px;
+}
+
+/* 
+Styles the search bar input and its container.
+Defines a minimum width for the input and custom padding, font size, shadow, and border radius.
+*/
+.searchBar-items {
+  min-width: 40%;
+}
+
+#search-bar {
+  background: var(--navbar-background-color);
+  color: #fff;
+  min-width: 550px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  box-shadow: 0px 0px 7px 0px var(--searchBar-box-shadow);
+  border-radius: 0 10px 10px 0;
+  outline: none;
+  padding: 10px;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  z-index: 1;
+}
+
+/* 
+Styles the placeholder text inside the search input.
+Gives it a lighter color and slightly larger font size.
+*/
+input::placeholder {
+  color: #b7b1a8;
+  font-size: 20px;
+}
+
+/* 
+Styles the search results container and individual items.
+- Applies a blur to the backdrop.
+- Sets a background color for each result and adjusts the size and appearance of the text.
+*/
+#search-results {
+  min-width: 435px;
+  margin-top: 30px;
+  list-style: none;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+}
+
+#search-results li {
+  background: rgba(84, 148, 204, 0.639);
+  height: 100px;
+  color: white;
+  width: 100%;
+}
+
+#search-results li .hero-name {
+  transition: all 0.2s ease;
+}
+
+/* 
+Changes the color of the hero name to red when the search result is hovered.
+*/
+#search-results li:hover .hero-name {
+  color: red;
+}
+
+/* 
+Styles the container that wraps individual search results.
+- Adds padding and adjusts spacing between elements with flexbox.
+*/
+.single-search-result {
+  padding: 0 5px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid black;
+  width: inherit;
+}
+
+/* 
+Styles links within the character information, ensuring they have no default decoration and are black.
+*/
+.character-info {
+  text-decoration: none;
+  color: black;
+}
+
+/* 
+Displays the hero information in a flex row and centers it vertically.
+*/
+.hero-info {
+  display: flex;
+  align-items: center;
+}
+
+/* 
+Increases the font size of the hero name to make it more prominent.
+*/
+.hero-name {
+  font-size: 26px;
+}
+
+/* 
+Styles the buttons within the search results.
+Adds gap between them and internal padding.
+*/
+.buttons {
+  gap: 5px;
+  padding: 0 10px;
+}
+
+/* ------------------------------- Background Image Styles ----------------------------- */
+
+/* 
+Styles the background image to cover 70% of the viewport width.
+Fixes its position at the bottom of the page.
+*/
+.bg-img {
+  width: 70%;
+  min-width: 600px;
+  position: fixed;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* ----------------- Toast Notifications for Favorites/Removal -------------------------- */
+
+/* 
+Styles for toast notifications (e.g., 'Favorite added' or 'Removed').
+- Positions them at the bottom of the screen.
+- Adjusts the font size, width, and color.
+*/
+.fav-toast,
+.remove-toast {
+  position: absolute;
+  bottom: 100px;
+  font-size: 24px;
+  width: 350px;
+  color: black;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  z-index: 2;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 5px;
+}
+
+/* 
+Toggles the visibility of the toast notifications.
+They are shown or hidden based on the custom data attribute `data-visiblity`.
+*/
+.fav-toast[data-visiblity="show"],
+.remove-toast[data-visiblity="show"] {
+  display: block;
+}
+
+.fav-toast[data-visiblity="hide"],
+.remove-toast[data-visiblity="hide"] {
+  display: none;
+}
+
+/* 
+Styles the 'Favorite added' toast.
+Gives it a custom blue background and white shadow.
+*/
+.fav-toast {
+  background-color: #4f99c7dc;
+  box-shadow: 0px 0px 3px 3px white;
+}
+
+/* 
+Styles the 'Removed from favorites' toast.
+Uses a purple background and white shadow.
+*/
+.remove-toast {
+  background-color: hsla(281, 43%, 60%, 0.831);
+  box-shadow: 0px 0px 3px 3px white;
+}
+
+/* ------------------- Media Queries for Small Screens ------------------------------- */
+
+/* 
+Responsive styles for small screens (max-width: 576px).
+Adjusts the width of the search bar and changes the navbar layout to a column layout with gaps.
+*/
+@media screen and (max-width: 576px) {
+  #search-bar {
+    min-width: 435px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .navbar-brand {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-brand span {
+    margin-top: -35px;
+  }
+
+  .logo {
+    width: 25%;
+    min-width: 45px;
+  }
+}

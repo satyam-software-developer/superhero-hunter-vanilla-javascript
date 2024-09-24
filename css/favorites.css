@@ -1,0 +1,85 @@
+/* This ensures that there is no horizontal scroll bar and prevents horizontal overflow */
+body {
+  overflow-x: hidden;
+}
+
+/* 
+This container is used to hold multiple card elements (superheroes).
+It ensures that:
+- The cards are spaced evenly (justify-content: space-evenly).
+- The cards will wrap to the next row when they overflow (flex-wrap: wrap).
+- The container doesn’t have scroll overflow (overflow: hidden).
+*/
+.cards-container {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+/*
+This class styles buttons inside elements with the 'character-info' class.
+It ensures that the button takes the full width of its parent container.
+*/
+.character-info .btn {
+  width: 100%;
+}
+
+/*
+Styles the individual superhero card:
+- Gives it a translucent background color (hsla value provides semi-transparent color).
+- Sets a fixed height (484px) and width (250px) for consistency.
+- Adds margin to create spacing between the cards.
+- Centers text within the card (text-align: center).
+- Adds a border with semi-transparent blue color.
+- Rounds the corners of the card using border-radius.
+- Ensures there's some space between items in the card using 'gap'.
+- Adds a backdrop blur filter to give a glassy appearance to the card background.
+- Sets the z-index to ensure that the card layers correctly above any potential overlapping elements.
+*/
+.card {
+  background-color: hsla(195, 55%, 59%, 0.648);
+  height: 484px;
+  width: 250px;
+  margin: 40px 25px;
+  text-align: center;
+  border: 1px solid rgba(67, 93, 196, 0.749);
+  border-radius: 10px;
+  gap: 5px;
+  z-index: 2;
+  backdrop-filter: blur(3px);
+}
+
+/*
+This targets images within the '.card' class.
+It rounds the top corners of the images to match the rounded corners of the card container.
+*/
+.card img {
+  border-radius: 10px 10px 0 0;
+}
+
+/*
+This styles the name text of the superhero inside the card.
+It increases the font size for emphasis and visibility.
+*/
+.name {
+  font-size: 20px;
+}
+
+/*
+Styles the 'remove from favorites' button at the bottom of the card.
+- Rounds the bottom corners to match the card's rounded corners.
+- Changes the text color of the button to black.
+*/
+.remove-btn {
+  border-radius: 0 0 10px 10px;
+  color: black;
+}
+
+/*
+This class is used when no characters are displayed.
+It increases the font size and sets the text color to a CSS variable (--text-color).
+*/
+.no-characters {
+  font-size: 40px;
+  color: var(--text-color);
+}

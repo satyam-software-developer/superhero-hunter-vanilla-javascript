@@ -1,0 +1,231 @@
+
+
+<!DOCTYPE html>
+<html lang="en" id="root" color-scheme="light">
+    <!-- 
+    Declares the document as an HTML5 document with `<!DOCTYPE html>`. 
+    The `<html>` tag defines the root of the HTML document with the language set to English (`lang="en"`). 
+    The `id="root"` identifies the HTML element and `color-scheme="light"` sets the initial theme to light mode.
+    -->
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- 
+        Sets the character encoding to UTF-8 to ensure the page can display special characters and symbols correctly.
+        -->
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- 
+        Ensures the webpage is compatible with the latest versions of Internet Explorer by using the latest rendering engine available.
+        -->
+
+        <meta http-equiv="Content-Security-Policy"
+            content="upgrade-insecure-requests">
+        <!-- 
+        The Content-Security-Policy meta tag forces the browser to upgrade all HTTP requests to HTTPS, ensuring secure communication.
+        -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 
+        This meta tag sets the page's width to the device's width (responsive design) and sets the initial zoom level to 1.
+        -->
+
+        <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
+        <!-- 
+        Links a favicon (a small icon that appears in the browser tab). The image file is stored in the 'images' directory.
+        -->
+
+        <title>Superhero Hunter</title>
+        <!-- 
+        Specifies the title of the webpage that will appear in the browser's title bar and tab.
+        -->
+
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,600;0,900;1,100;1,200;1,300;1,800&display=swap"
+            rel="stylesheet">
+        <!-- 
+        Preconnects to Google's font services to load the 'Kanit' font family. The font supports various weights (200, 300, 600, etc.) for use on the page.
+        -->
+
+        <!-- FontAwesome -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- 
+        Links FontAwesome, a popular icon library. The integrity and crossorigin attributes ensure secure loading, while referrerpolicy controls how referrer information is sent with requests.
+        -->
+
+        <!-- Custom Stylesheet -->
+        <link rel="stylesheet" href="./css/styles.css">
+        <!-- 
+        Links a custom CSS stylesheet located in the 'css' directory. This file contains styles specific to this webpage.
+        -->
+
+        <!-- Crypto JS -->
+        <script defer
+            src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+            integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- 
+        This script loads the CryptoJS library, a popular encryption library for securely encrypting data. 
+        The `defer` attribute ensures that the script is executed after the HTML document has been fully parsed. 
+        -->
+    </head>
+
+    <body class="flex-col">
+        <!-- 
+        The body tag contains the visible content of the webpage. The `flex-col` class applies flexbox styles to arrange child elements in a vertical column layout.
+        -->
+
+        <!-- Navbar -->
+        <nav class="flex-row navbar">
+            <!-- 
+            Defines a navigation bar. The `flex-row` class ensures the elements are arranged in a row, and `navbar` contains styling for the navbar.
+            -->
+
+            <!-- Site Icon and Name -->
+            <div class="flex-row navbar-brand">
+                <!-- 
+                This div contains the site icon (logo) and the site name, aligned in a horizontal row using `flex-row`.
+                -->
+
+                <img class="logo" src="./images/mask.gif2.png" alt>
+                <!-- 
+                The site logo (image), with the file located in the 'images' directory. The `alt` attribute is left empty, which should ideally contain descriptive text for accessibility.
+                -->
+
+                <a href="./index.html">
+                    <span>Superhero Hunter</span>
+                </a>
+                <!-- 
+                A link that redirects users to the homepage (index.html) when clicked. The text "Superhero Hunter" is styled and displayed as part of the branding.
+                -->
+            </div>
+
+            <!-- Theme Button and Favourites Button -->
+            <div class="flex-row favAndTheme-btn">
+                <!-- 
+                This container holds the theme toggle button and the favorites button. The `flex-row` class aligns the buttons horizontally.
+                -->
+
+                <button id="theme-btn" class="btn"><i
+                        class="fa-solid fa-moon"></i></button>
+                <!-- 
+                This button toggles between light and dark themes. The moon icon is used as an indicator of dark mode (FontAwesome icon).
+                -->
+
+                <a class="flex-row link-to-different-page"
+                    href="./favorites.html">
+                    <button class="btn fav-btn">
+                        <i class="fa-solid fa-heart fav-icon"></i> &nbsp;
+                        Favourites
+                    </button>
+                </a>
+                <!-- 
+                A button that links to the favorites page (favorites.html), with a heart icon representing the user's favorite superheroes.
+                -->
+            </div>
+        </nav>
+
+        <!-- Search Bar and Search Results -->
+        <div class="flex-col searchBar-items">
+            <!-- 
+            This div contains the search bar and the search results. The `flex-col` class arranges the items vertically.
+            -->
+
+            <div class="search-bar-container" class="flex-row">
+                <!-- 
+                This div is the container for the search bar, styled using `search-bar-container` class and aligned horizontally with `flex-row`.
+                -->
+
+                <div class="search-icon-container" style><i
+                        class="fa-solid fa-magnifying-glass"></i></div>
+                <!-- 
+                This div contains the magnifying glass icon (FontAwesome) as a visual cue for the search bar. The `search-icon-container` class provides the necessary styling.
+                -->
+
+                <input id="search-bar" type="text" autocomplete="off"
+                    placeholder="Search for Superheros">
+                <!-- 
+                The input field for the search bar. It has an ID of `search-bar` for easy targeting in JavaScript. 
+                The `autocomplete="off"` attribute disables autocomplete suggestions, and the `placeholder` gives a hint to the user (Search for Superheros).
+                -->
+            </div>
+
+            <ul class="flex-col" id="search-results">
+                <!-- 
+                This unordered list (ul) is where search results will be displayed. The `flex-col` class arranges results in a vertical layout, and `id="search-results"` allows JavaScript to dynamically populate it with search results.
+                -->
+
+                <!-- Structure of the data that is added using DOM manipulation -->
+                <!-- 
+                This commented block represents the structure of each search result, dynamically added via JavaScript.
+                Each list item (li) contains superhero information such as a thumbnail image, name, and buttons for adding/removing from favorites.
+                -->
+
+                <!-- 
+                <li class="flex-row single-search-result">
+                    <div class="flex-row img-info">
+                         <img src="${hero.thumbnail.path+'/portrait_medium.' + hero.thumbnail.extension}" alt="">
+                         <div class="hero-info">
+                              <a class="character-info" href="./more-info.html">
+                                   <span class="hero-name">${hero.name}</span>
+                              </a>
+                         </div>
+                    </div>
+                    <div class="flex-col buttons">
+                         <button class="btn add-to-fav-btn">
+                             ${favouritesCharacterIDs.has(`${hero.id}`) ? 
+                             "<i class=\"fa-solid fa-heart-circle-minus\"></i> &nbsp; Remove from Favourites" :
+                             "<i class=\"fa-solid fa-heart fav-icon\"></i> &nbsp; Add to Favourites"}
+                         </button>
+                    </div>
+                    <div style="display:none;">
+                         <span>${hero.name}</span>
+                         <span>${hero.description}</span>
+                         <span>${hero.comics.available}</span>
+                         <span>${hero.series.available}</span>
+                         <span>${hero.stories.available}</span>
+                         <span>${hero.thumbnail.path+'/portrait_uncanny.' + hero.thumbnail.extension}</span>
+                         <span>${hero.id}</span>
+                         <span>${hero.thumbnail.path+'/landscape_incredible.' + hero.thumbnail.extension}</span>
+                         <span>${hero.thumbnail.path+'/standard_fantastic.' + hero.thumbnail.extension}</span>
+                    </div>
+               </li> 
+               -->
+                <!-- 
+               This block outlines how each search result item is structured. It includes:
+               - An image of the superhero
+               - A link to more information
+               - Buttons for adding/removing from favorites
+               - Hidden metadata like the superhero's ID, name, and media.
+               -->
+            </ul>
+        </div>
+
+        <!-- Toasts for notifying user that character is added or removed from favourites -->
+        <span data-visiblity="hide" class="fav-toast">Added to Favourites</span>
+        <span data-visiblity="hide" class="remove-toast">Removed from
+            Favourites</span>
+        <!-- 
+        These span elements are hidden by default and are used to display toast notifications when the user adds or removes a superhero from their favorites.
+        -->
+
+        <!-- Background image -->
+        <img class="bg-img" src="./images/background-light-img3.png" alt>
+        <!-- 
+        Displays a background image on the webpage. The file is located in the 'images' directory, and `bg-img` provides styling for the image.
+        -->
+
+        <!-- External Script file -->
+        <script src="./js/script.js"></script>
+        <!-- 
+        Links the external JavaScript file (script.js) located in the 'js' directory. This file contains JavaScript that handles the dynamic behavior of the page, such as search and theme toggling.
+        -->
+
+    </body>
+</html>
