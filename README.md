@@ -2,21 +2,21 @@
 
 Superhero Hunter using vanilla JavaScript project for frontend web development.
 
-1. Git repository link:https://github.com/satyam-software-developer/superhero-hunter-vanilla-javascript.git
+1. Demo: https://drive.google.com/file/d/1tsaN9G-S3j1uD2hOHBlJxWqinQmU2YmN/view?usp=sharing
 2. Hosted link: https://satyam-software-developer.github.io/superhero-hunter-vanilla-javascript/
 
 ## Overview
 
-The Superhero Hunter App is a web application that allows users to search for superheroes using the Marvel API. It displays a list of superheroes based on user input and provides additional information on each superhero. The app also includes a feature to mark superheroes as favorites and view them on a separate page. This app is built using vanilla JavaScript and Marvel’s API, styled using CSS frameworks such as Bootstrap.
+The Superhero Hunter App is a web application that allows users to search for superheroes using the Marvel API. It displays a list of superheroes based on user input and provides additional information on each superhero. The app also includes a feature to mark superheroes as favourites and view them on a separate page. This app is built using vanilla JavaScript and Marvel’s API, styled using CSS frameworks such as Bootstrap.
 
 ## Description
 
-This is a web application built using JavaScript, HTML, and CSS that allows users to search for their favorite Marvel superheroes and view their detailed information. The app also allows users to add characters to their favorites list for easy access.
+This is a web application built using JavaScript, HTML, and CSS that allows users to search for their favourite Marvel superheroes and view their detailed information. The app also allows users to add characters to their favourites list for easy access.
 
 ## Features
 
 - Search functionality for Marvel superheroes
-- Add characters to favorites list
+- Add characters to favourites list
 - View detailed information for characters
 
 # Home Page
@@ -32,9 +32,9 @@ This is a web application built using JavaScript, HTML, and CSS that allows user
 
 # Favorite Superheroes Page
 
-- Displays a list of favorite superheroes.
+- Displays a list of favourite superheroes.
 - This list persists between browser sessions using localStorage.
-- Each superhero has a "Remove from favorites" button.
+- Each superhero has a "Remove from favourites" button.
 
 ## Marvel API Integration
 
@@ -66,12 +66,12 @@ To use the Marvel API, we need to generate a hash using a combination of:
 
 # Favorite Superheroes Page
 
-- Lists all superheroes marked as favorite.
-- Includes a "Remove from favorites" button for each superhero, which updates the list in real-time and in localStorage.
+- Lists all superheroes marked as favourites.
+- Includes a "Remove from favourites" button for each superhero, which updates the list in real-time and in localStorage.
 
 ## LocalStorage for Favorites
 
-The "My Favorite Superheroes" list is stored in the browser’s localStorage, ensuring that the list persists between browser sessions. You can add and remove superheroes from this list.
+The "My Favorite Superheroes" list is stored in the browser’s local storage, ensuring that the list persists between browser sessions. You can add and remove superheroes from this list.
 
 ## Technologies Used
 
@@ -79,7 +79,7 @@ The "My Favorite Superheroes" list is stored in the browser’s localStorage, en
 - CSS3 (Bootstrap)
 - JavaScript (Vanilla) for API calls, DOM manipulation, and event handling.
 - Marvel API for superhero data.
-- localStorage for persisting favorite superheroes.
+- localStorage for persisting favourite superheroes.
 
 ## Dependencies
 
@@ -96,7 +96,7 @@ The "My Favorite Superheroes" list is stored in the browser’s localStorage, en
   git clone https://github.com/satyam-software-developer/superhero-hunter-vanilla-javascript.git
 ```
 
-- Obtain an API key from Marvel Developer Portal (https://developer.marvel.com/) and add it to the appropriate location in the code
+- Obtain an API key from the Marvel Developer Portal (https://developer.marvel.com/) and add it to the appropriate location in the code
 
 - Run the application by opening the index.html file in your browser.
 
@@ -104,8 +104,8 @@ The "My Favorite Superheroes" list is stored in the browser’s localStorage, en
 
 1. Search for a Marvel superhero by typing their name in the search bar and clicking the "Search" button.
 2. Click on a character to view their detailed information.
-3. Click the "Add to Favorites" button to add a character to your favorites list.
-4. View your favorite characters by clicking on the "Favorites" tab.
+3. Click the "Add to Favorites" button to add a character to your favourites list.
+4. View your favourite characters by clicking on the "Favorites" tab.
 
 ## Note
 
@@ -114,10 +114,6 @@ The app is using a free developer API key from Marvel, thus the usage of the app
 ## License
 
 This project is licensed under the MIT License.
-
-## DEMO
-
-- https://satyam-software-developer.github.io/superhero-hunter-vanilla-javascript/
 
 ## Author
 
